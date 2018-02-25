@@ -11,6 +11,8 @@ import com.crud.library.repository.TitleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DbService {
 
@@ -27,6 +29,7 @@ public class DbService {
     private TitleRepository titleRepository;
 
 
+
     //HIRE
     public Hire saveHire(final Hire hire) {
 
@@ -34,17 +37,20 @@ public class DbService {
                 save(hire);
     }
 
+
     //ITEM
     public Item saveItem(final Item item) {
         return itemRepository
                 .save(item);
     }
 
+
     //READER
     public Reader saveReader(final Reader reader) {
         return readerRepository
                 .save(reader);
     }
+
 
     //TITLE
     public Title saveTitle(final Title title) {
@@ -57,6 +63,12 @@ public class DbService {
         return titleRepository
                 .findOne(id);
 
+    }
+
+    public List<Title> getAllTitles() {
+
+        return titleRepository
+                .findAll();
     }
 
 

@@ -27,7 +27,7 @@ public class ItemController {
                                 .mapToItem(itemDto,
                                         dbService
                                                 .findTitleById(
-                                                        itemDto.getId()
+                                                        itemDto.getTitleId()
                                                 )
                                 )
                 );

@@ -4,6 +4,9 @@ import com.crud.library.domain.title.Title;
 import com.crud.library.domain.title.TitleDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class TitleMapper {
 
@@ -21,5 +24,18 @@ public class TitleMapper {
                 title.getTitle(),
                 title.getAuthor(),
                 title.getYear());
+    }
+
+    public List<TitleDto> mapToTitleDtoList(List<Title> titleList) {
+
+        return titleList.stream()
+                .map(t -> new TitleDto(
+                        t.getId(),
+                        t.getTitle(),
+                        t.getAuthor(),
+                        t.getYear())
+                )
+                .collect(Collectors.toList());
+
     }
 }
