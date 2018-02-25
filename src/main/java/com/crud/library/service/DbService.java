@@ -51,4 +51,13 @@ public class DbService {
         return titleRepository
                 .save(title);
     }
+
+    public Title findTitleById(final Long id) {
+
+        return titleRepository
+                .findOne(id);
+
+    }
+
+
 }

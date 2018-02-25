@@ -8,4 +8,6 @@ public interface TitleRepository extends CrudRepository<Title, Long> {
     @Override
     Title save(final Title title);
 
+    @Override
+    Title findOne(Long id);
 }

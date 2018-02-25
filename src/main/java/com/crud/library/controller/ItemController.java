@@ -21,10 +21,16 @@ public class ItemController {
 
     @PostMapping
     public void addItem(@RequestBody ItemDto itemDto) {
-        dbService.
-                saveItem(
-                        itemMapper.
-                                mapToItem(itemDto));
+        dbService
+                .saveItem(
+                        itemMapper
+                                .mapToItem(itemDto,
+                                        dbService
+                                                .findTitleById(
+                                                        itemDto.getId()
+                                                )
+                                )
+                );
 
     }
 
