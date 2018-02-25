@@ -29,7 +29,6 @@ public class DbService {
     private TitleRepository titleRepository;
 
 
-
     //HIRE
     public Hire saveHire(final Hire hire) {
 
@@ -44,12 +43,26 @@ public class DbService {
                 .save(item);
     }
 
+    public List<Item> getAllItems() {
+
+        return itemRepository
+                .findAll();
+    }
+
 
     //READER
     public Reader saveReader(final Reader reader) {
         return readerRepository
                 .save(reader);
     }
+
+
+    public List<Reader> getAllreaders() {
+
+        return readerRepository
+                .findAll();
+    }
+
 
 
     //TITLE

@@ -7,30 +7,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 
-
 public class ItemMapper {
 
     public Item mapToItem(ItemDto itemDto, Title title) {
 
         return new Item(
-                itemDto
-                        .getId(),
+                itemDto.getId(),
                 title,
-                itemDto
-                        .getStatus());
+                itemDto.getStatus());
 
     }
 
     public ItemDto mapToItemDto(Item item) {
 
         return new ItemDto(
-                item
+                item.getId(),
+                item.getTitle()
                         .getId(),
-                item
-                        .getTitle()
-                        .getId(),
-                item.
-                        getStatus()
+                item.getStatus()
         );
     }
 
